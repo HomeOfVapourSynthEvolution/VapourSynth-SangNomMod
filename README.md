@@ -18,7 +18,7 @@ I quote the original licence here.
 
     core.sangnom.SangNomMod(clip clip, int order = 1, int aa = 48, int aac = 0)
 
-    clip    - clip to be processed. Mod-16 only.
+    clip    - clip to be processed. Mod-16 width and YUVP8/Y8 only.
     order   - Order of deinterlacing. (Default: 1)
     aa      - Strength of luma anti-aliasing. (Default: 48)
     aac     - Strength of chroma anti-aliasing. (Default: 0)
