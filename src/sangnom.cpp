@@ -7,7 +7,6 @@
 
 #ifdef _MSC_VER
 #define SG_FORCEINLINE __forceinline
-#define alloca _alloca
 #else
 #define SG_FORCEINLINE inline
 #endif
@@ -578,10 +577,11 @@ void SangNom2::processPlane(IScriptEnvironment * env, BYTE * pBuffers[BUFFERS_CO
 		
 	}
 	// Process Buffer
-	auto temp = static_cast<BYTE*>(alloca(bufferPitch_ * 2));
+	auto temp = static_cast<BYTE*>(_mm_malloc(bufferPitch_ * 2, 16));
 	for (int i = 0; i < BUFFERS_COUNT; ++i) {
 		processBuffer(pBuffers[i], temp, bufferPitch_, bufferHeight_);
 	}
+	_mm_free(temp);
 
 	// Finalize Plane
 	{
