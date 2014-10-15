@@ -1,5 +1,5 @@
-#include <VSHelper.h>
-#include <VapourSynth.h>
+#include <vapoursynth/VSHelper.h>
+#include <vapoursynth/VapourSynth.h>
 #include <emmintrin.h>
 #include <stdio.h>
 #include "IScriptEnvironment.h"
